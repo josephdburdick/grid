@@ -11,43 +11,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/normalize.css" type="text/css" />
-    <link rel="stylesheet" href="/css/grid.css" type="text/css" />
-    <!--[if lt IE 9]>
-      <script src="/js/html5shiv.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="grid.css" type="text/css" />
+
+  <!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+  <![endif]-->
 
     <!-- Typekit -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-
-    <!-- Scripts -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-42069005-1', 'adamkaplan.me');
-      ga('send', 'pageview');
-    </script>
   </head>
 
   <body>
     <header>
       <div class='container'>
         <div class="intro">
-          <a href="/grid">
+          <a href="http://www.adamkaplan.me/grid">
             <h1>grid</h1>
           </a>
-          <p>A simple guide to responsive design.<br>Made by <a href="/" target="_blank">Adam Kaplan</a>.</p>
+          <p>A simple guide to responsive design.<br>Made by <a href="http://www.adamkaplan.me/" target="_blank">Adam Kaplan</a>.</p>
         </div>
-        <img src="/images/grid/intro.png" alt="Intro" class="animated fadeInUp">
+        <img src="images/intro.png" alt="Intro" class="animated fadeInUp">
       </div>
     </header>
 
     <section>
       <div class='container'>
-        <img src="/images/grid/rwd.png" alt="RWD" class="rwd">
+        <img src="images/rwd.png" alt="RWD" class="rwd">
         <h1>Why bother with responsive?</h1>
         <p>We want our websites to be useable on all devices by responding to
         the user’s behavior, screen size and screen orientation.</p>
@@ -73,13 +64,13 @@
         <h1>Add the Viewport Meta Tag</h1>
         <p>Place in the <code>&lt;head&gt;</code> of your HTML. This enables use of media queries for cross-device layouts.
         <hr>
-        <script src="https://gist.github.com/aekaplan/8243831.js"></script>
+        <script src="https://gist.github.com/anonymous/9225627.js"></script>
       </div>
     </section>
 
     <section class="example">
       <div class="container">
-        <img src="/images/grid/box-model.png" alt="Box Model">
+        <img src="images/box-model.png" alt="Box Model">
       </div>
     </section>
 
@@ -92,25 +83,25 @@
 
         <div class="row">
           <div class="column one-fourth">
-            <img src="/images/grid/content.png" alt="content">
+            <img src="images/content.png" alt="content">
             <h3 class="content">Content</h3>
             <p>The content of the box, where text and images appear.</p>
           </div>
 
           <div class="column one-fourth">
-            <img src="/images/grid/padding.png" alt="padding">
+            <img src="images/padding.png" alt="padding">
             <h3 class="padding">Padding</h3>
             <p>Clears an area around the content.</p>
           </div>
 
           <div class="column one-fourth">
-            <img src="/images/grid/border.png" alt="border">
+            <img src="images/border.png" alt="border">
             <h3 class="border">Border</h3>
             <p>A border that goes around the padding.</p>
           </div>
 
           <div class="column one-fourth">
-            <img src="/images/grid/margin.png" alt="margin">
+            <img src="images/margin.png" alt="margin">
             <h3 class="margin">Margin</h3>
             <p>Clears an area around the border.</p>
           </div>
@@ -124,7 +115,7 @@
         <h1>Use box-sizing: border-box</h1>
         <p>Place at the top of your <code>CSS</code> file. The <code>*</code> will target all elements on the page.</p>
         <hr>
-        <script src="https://gist.github.com/aekaplan/8247563.js"></script>
+        <script src="https://gist.github.com/anonymous/9225647.js"></script>
       </div>
     </section>
 
@@ -139,13 +130,13 @@
 
         <div class="row">
           <div class="column half">
-            <img src="/images/grid/without-box-model.png" alt="Without Box Model">
+            <img src="images/without-box-model.png" alt="Without Box Model">
             <h3>Without box-sizing: border-box</h3>
             <p>Margin, borders and padding are drawn outside the set width of your content.</p>
           </div>
 
           <div class="column half">
-            <img src="/images/grid/with-box-model.png" alt="With Box Model">
+            <img src="images/with-box-model.png" alt="With Box Model">
             <h3>With box-sizing: border-box</h3>
             <p>Borders and padding are drawn inside the set width of your content. The margin is drawn outside.</p>
           </div>
@@ -160,14 +151,14 @@
         <p>A container holds all elements and controls the page's maximum width. Using a container will make designing for
         responsive easier!</p>
         <hr>
-        <script src="https://gist.github.com/aekaplan/8246124.js"></script>
-        <script src="https://gist.github.com/aekaplan/8246032.js"></script>
+        <script src="https://gist.github.com/anonymous/9225660.js"></script>
+        <script src="https://gist.github.com/anonymous/9225665.js"></script>
       </div>
     </section>
 
     <section class="example">
       <div class="container">
-        <img src="/images/grid/container.png" alt="Container">
+        <img src="images/container.png" alt="Container">
       </div>
     </section>
 
@@ -176,10 +167,10 @@
         <div class="circle">4</div>
         <h1>Create a Column</h1>
         <p>A column is a class used for stacking content horizontally. The first margin is removed using the
-        <a href="/pseudo-classes/">pseudo-class</a> <code>first-child</code>.</p>
+        <a href="http://www.adamkaplan.me/pseudo-classes/">pseudo-class</a> <code>first-child</code>.</p>
         <hr>
-        <script src="https://gist.github.com/aekaplan/8246868.js"></script>
-        <script src="https://gist.github.com/aekaplan/8246935.js"></script>
+        <script src="https://gist.github.com/anonymous/9225669.js"></script>
+        <script src="https://gist.github.com/anonymous/9225672.js"></script>
       </div>
     </section>
 
@@ -197,8 +188,8 @@
         <h1>Create Column Sizes</h1>
           <p>Add size classes to columns to create a reuseable grid system.</p>
           <hr>
-          <script src="https://gist.github.com/aekaplan/8247360.js"></script>
-          <script src="https://gist.github.com/aekaplan/8247386.js"></script>
+          <script src="https://gist.github.com/anonymous/9225679.js"></script>
+          <script src="https://gist.github.com/anonymous/9225683.js"></script>
         </div>
       </section>
 
@@ -269,14 +260,11 @@
           <div class="circle">6</div>
           <h1>Create Rows</h1>
           <p>Columns are wrapped in rows to prevent other elements from stacking next to them, otherwise known as clearing
-          issues. Rows are cleared with either a <code>clearfix</code> or <code>overflow: hidden</code>. This clearfix was
-          created by <a href="http://nicolasgallagher.com/micro-clearfix-hack/" target="_blank">Nicolas Gallagher</a>:</p>
+          issues. Rows are cleared with either a <code>clearfix</code> or <code>overflow: hidden</code>.</p>
           <hr>
-          <script src="https://gist.github.com/anonymous/8971398.js"></script>
-          <p>~OR~</p>
-          <script src="https://gist.github.com/aekaplan/8467460.js"></script>
+          <script src="https://gist.github.com/anonymous/9225691.js"></script>
           <hr>
-          <script src="https://gist.github.com/aekaplan/8430571.js"></script>
+          <script src="https://gist.github.com/anonymous/9225695.js"></script>
         </div>
       </section>
 
@@ -316,7 +304,7 @@
           will replace the CSS the browser uses. This is the bread and butter of
           responsive web design.</p>
           <hr>
-          <script src="https://gist.github.com/aekaplan/8430704.js"></script>
+          <script src="https://gist.github.com/anonymous/9225701.js"></script>
         </div>
       </section>
 
@@ -359,7 +347,7 @@
           polyfills in the <code>&lt;head&gt;</code> of your HTML
           to enable html5 elements and responsive breakpoints in Internet Explorer 8.</p>
           <hr>
-          <script src="https://gist.github.com/anonymous/8971216.js"></script>
+          <script src="https://gist.github.com/anonymous/9225714.js"></script>
         </div>
       </section>
 
@@ -395,6 +383,7 @@
               <li><a href="http://opensignal.com/reports/fragmentation-2013/" target="_blank">Android Fragmentation Visualized</a></li>
               <li><a href="http://en.wikipedia.org/wiki/Internet_Explorer_box_model_bug" target="_blank">Internet Explorer Box Model</a></li>
               <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box_model" target="_blank">Box Model</a></li>
+              <li><a href="http://css-tricks.com/snippets/css/clear-fix/" target="_blank">Force Element To Self-Clear its Children</a></li>
               <li><a href="https://developers.google.com/chrome-developer-tools/" target="_blank">Chrome Developer Tools</a></li>
               <li><a href="http://daneden.github.io/animate.css/" target="_blank">Animate.css</a></li>
               <li><a href="https://gist.github.com/aekaplan" target="_blank">Code samples provided by GitHub Gist</a></li>

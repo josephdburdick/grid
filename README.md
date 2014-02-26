@@ -121,27 +121,13 @@ Add size classes to columns to create a reuseable grid system.
 ```
 
 ####6. Create Rows
-Columns are wrapped in rows to prevent other elements from stacking next to them, otherwise know as clearing issues. Rows are cleared with either a `clearfix` or `overflow: hidden`. This clearfix was created by [Nicolas Gallagher](http://nicolasgallagher.com/micro-clearfix-hack/).
+Columns are wrapped in rows to prevent other elements from stacking next to them, otherwise know as clearing issues. Rows are cleared with a `clearfix`.
 
 ```
-.clearfix:before,
-.clearfix:after {
-  content: " ";
+.row:after {
+  content: "";
   display: table;
-}
- 
-.clearfix:after {
   clear: both;
-}
- 
-.clearfix {
-  *zoom: 1;
-}
-```
-
-```
-.row {
-  overflow: hidden;
 }
 ```
 
@@ -177,6 +163,16 @@ If the browser's screen size is within a set range, a media query will replace t
 }
 ```
 
+####8. Make It Work With IE8
+Add the [html5shiv](https://github.com/aFarkas/html5shiv) and [Respond.js](https://github.com/scottjehl/Respond) polyfills in the `<head>` of your HTML to enable html5 elements and responsive breakpoints in Internet Explorer 8.
+
+```
+<!--[if lt IE 9]>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+```
+
 ####Further Reading
 * [For a Future-Friendly Web](http://alistapart.com/article/for-a-future-friendly-web)
 * [A Book Apart: Responsive Web Design](http://www.abookapart.com/products/responsive-web-design)
@@ -188,5 +184,6 @@ If the browser's screen size is within a set range, a media query will replace t
 * [Android Fragmentation Visualized](http://opensignal.com/reports/fragmentation-2013/)
 * [Internet Explorer Box Model](http://en.wikipedia.org/wiki/Internet_Explorer_box_model_bug)
 * [Box Model](http://developer.mozilla.org/en-US/docs/Web/CSS/box_model)
+* [Force Element To Self-Clear its Children](http://css-tricks.com/snippets/css/clear-fix/)
 * [Chrome Developer Tools](http://developers.google.com/chrome-developer-tools/)
 * [Animate.css](http://daneden.github.io/animate.css/)

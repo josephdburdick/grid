@@ -98,7 +98,7 @@ section.resources {
 }
 
 .fragmentation {
-  background-image: url("/images/grid/fragmentation.png");
+  background-image: url("images/fragmentation.png");
   background-size: cover;
   min-height: 500px;
 }
@@ -288,7 +288,7 @@ img {
 /* Grid Mobile
 -------------------------------------------------------------- */
 .mobile-background {
-  background-image: url("/images/grid/mobile.png");
+  background-image: url("images/mobile.png");
   background-size: 286px 600px;
   width: 286px;
   height: 600px;
