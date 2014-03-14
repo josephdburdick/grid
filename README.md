@@ -20,7 +20,7 @@ Place in the `<head>` of your HTML. This enables use of media queries for cross-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
-And place this in your CSS for compatibility with IE10+
+And place this in your CSS for compatibility with IE10+...
 ```
 @-ms-viewport {width: device-width;}
 ```
