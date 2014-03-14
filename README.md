@@ -20,6 +20,11 @@ Place in the `<head>` of your HTML. This enables use of media queries for cross-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
+And place this in your CSS for compatibility with IE10+
+```
+@-ms-viewport {width: device-width;}
+```
+
 ####2. Use box-sizing: border-box
 Place at the top of your CSS file. The `*` will target all elements on the page.
 ```
@@ -172,6 +177,7 @@ Add the [html5shiv](https://github.com/aFarkas/html5shiv) and [Respond.js](https
   <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
 <![endif]-->
 ```
+
 
 ####Further Reading
 * [For a Future-Friendly Web](http://alistapart.com/article/for-a-future-friendly-web)
