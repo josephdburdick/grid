@@ -1,0 +1,209 @@
+/* Imports
+-------------------------------------------------------------- */
+@import '_mediaqueries.styl'
+@import '_breakpoint_inspector.styl'
+
+/* Layout
+-------------------------------------------------------------- */
+*, *:before, *:after
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+html
+  font: 112%/1.5 "Open Sans", sans-serif
+  font-weight: 400
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+
+body
+  background-color: #fff
+  color: #555
+
+.container
+  margin: 0 auto
+  max-width: 1000px
+  width: 90%
+
+
+/* Grid
+-------------------------------------------------------------- */
+.column
+  float: left
+  margin-left: 5%
+
+  &:first-child
+    margin-left: 0
+
+  &.full
+    width: 100%
+
+  &.two-thirds
+    width: 65%
+
+  &.half
+    width: 47.5%
+
+  &.one-third
+    width: 30%
+
+  &.one-fourth
+    width: 21.25%
+
+/* Typography
+-------------------------------------------------------------- */
+h1, h2, h3, h4, h5
+  font-weight: 600
+  margin: 0
+
+h1 
+  font-size: 1.5rem
+  line-height: 1.3em
+  margin-bottom: 1.5rem
+
+h3 
+  font-size: 1.2rem
+  margin-bottom: .5rem
+
+p 
+  margin: 0 auto
+
+code 
+  background-color: #f8f8f8
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+  border: 1px solid #ddd
+  font-family: Consolas, "Liberation Mono", Courier, monospace
+  font-size: 0.8rem
+  padding: 0.1rem 0.3rem
+  position: relative
+  top: -1px
+  white-space: nowrap
+
+ul 
+  display: inline-block
+  margin: 0
+  text-align: left
+
+/* Links
+-------------------------------------------------------------- */
+a 
+  color: #ec6f66
+  text-decoration: none
+
+  &:hover 
+    text-decoration: underline
+
+/* Elements
+-------------------------------------------------------------- */
+hr 
+  border: 0
+  border-top: 1px solid #ddd
+  margin: 2em auto
+  width: 3rem
+
+  &.small
+    margin: 1.5em auto
+
+
+img
+  display: block
+  height: auto
+  margin: 0 auto 1.5rem auto
+  width: 100%
+
+
+/* Grid
+-------------------------------------------------------------- */
+.grid
+  text-align: center
+
+  span 
+    font-size: 0.9em
+    font-weight: 600
+
+  .container 
+    border: 2px dashed rgba(255,255,255,0.3)
+    padding: 2em
+
+  .row 
+    overflow: hidden
+    margin-top: 1.5em
+
+    &:first-child 
+      margin-top: 0
+
+  .column 
+    border: 2px solid #fff
+    -moz-border-radius: 3px
+    -webkit-border-radius: 3px
+    background: rgba(pink,0.3)
+    padding: 1.5em
+
+
+
+/* Grid Mobile
+-------------------------------------------------------------- */
+
+.container.mobile
+  border: none
+  max-width: 320px
+  padding: 106px 24px 0
+
+  .row
+    margin: 0
+
+  .column
+    margin: 0 0 18px 0
+    padding: 16.5px
+    width: 100%
+
+
+/*  #Clearfix by Nicolas Gallagher
+-------------------------------------------------------------- */
+.container:before,
+.container:after,
+.row:before,
+.row:after,
+.cf:before,
+.cf:after
+  content: " "
+  display: table
+
+.container:after,
+.row-example:after,
+.cf:after
+  clear: both
+
+.container,
+.row-example,
+.cf
+  *zoom: 1
+
+
+/* Media Queries
+-------------------------------------------------------------- */
+@media xs
+  html
+    font-size: 100%
+  section
+    padding: 2rem 0
+  hr
+    margin: 2rem auto
+
+  .column.full,
+  .column.two-thirds,
+  .column.half,
+  .column.one-third,
+  .column.one-fourth 
+    float: none
+    margin: 2em 0 0 0
+    width: 100%
+  
+
+  .column:first-child  
+    margin-top: 0
+  .container.mobile .column  
+    padding: 18px
+

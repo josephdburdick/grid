@@ -1,7 +1,8 @@
-##Grid
+##Grid + Stylus Utility Belt
+
 
 A simple guide to responsive design.<br>
-www.adamkaplan.me/grid
+Made by [Adam Kaplan](http://www.adamkaplan.me). Translated into Stylus and extended with [Stylus Utility Belt](https://github.com/josephdburdick/stylus-utilitybelt) by [Joe Burdick](http://joeylabs.com).
 
 
 ####Why bother with responsive?
@@ -16,127 +17,114 @@ As of 2013, there are thousands of different devices and screen sizes that brows
 
 ####1. Add the Viewport Meta Tag
 Place in the `<head>` of your HTML. This enables use of media queries for cross-device layouts.
+
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
 And place this in your CSS for compatibility with IE10+...
+
 ```
 @-ms-viewport {width: device-width;}
 ```
 
 ####2. Use box-sizing: border-box
 Place at the top of your CSS file. The `*` will target all elements on the page.
+
 ```
-*, *:before, *:after {
+*, *:before, *:after
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
+
 ```
 
 ####3. Create a Container
-A container holds all elements and controls the page's maximum width. Using a container will make designing for responsive easier!
-```
-.container {
-  margin: 0 auto;
-  max-width: 960px;
-  width: 90%;
-}
-```
-
-```
-<div class="container"></div>
-```
+A container holds all elements and controls the page's maximum width. Using a container will make designing for responsive easier! 
 
 ####4. Create a Column
 A column is a class used for stacking content horizontally. The first margin is removed using the pseudo-class `first-child`.
 
 ```
-.column {
-  float: left;
-  margin-left: 5%;
-}
- 
-.column:first-child {
-  margin-left: 0;
-}
-```
+.column
+  float: left
+  margin-left: 5%
 
-```
-<div class="container">
-  <div class="column"></div>
-</div>
+  &:first-child 
+    margin-left: 0
 ```
 
 ####5. Create Column Sizes
 Add size classes to columns to create a reuseable grid system.
 
-```
-<div class="container">
-  <div class="row">
-    <div class="column full"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="column full"></div>
+    </div>
+    
+    <div class="row">
+      <div class="column two-thirds"></div>
+      <div class="column one-third"></div>
+    </div>
+    
+    <div class="row">
+      <div class="column half"></div>
+      <div class="column half"></div>
+    </div>
+    
+    <div class="row">
+      <div class="column one-third"></div>
+      <div class="column one-third"></div>
+      <div class="column one-third"></div>
+    </div>
+    
+    <div class="row">
+      <div class="column one-fourth"></div>
+      <div class="column one-fourth"></div>
+      <div class="column one-fourth"></div>
+      <div class="column one-fourth"></div>
+    </div>
   </div>
-  
-  <div class="row">
-    <div class="column two-thirds"></div>
-    <div class="column one-third"></div>
-  </div>
-  
-  <div class="row">
-    <div class="column half"></div>
-    <div class="column half"></div>
-  </div>
-  
-  <div class="row">
-    <div class="column one-third"></div>
-    <div class="column one-third"></div>
-    <div class="column one-third"></div>
-  </div>
-  
-  <div class="row">
-    <div class="column one-fourth"></div>
-    <div class="column one-fourth"></div>
-    <div class="column one-fourth"></div>
-    <div class="column one-fourth"></div>
-  </div>
-</div>
-```
+
 
 ```
-.column.full {
-  width: 100%;
-}
-  
-.column.two-thirds {
-  width: 65%;
-}
-  
-.column.half {
-  width: 47.5%;
-}
- 
-.column.one-third {
-  width: 30%;
-}
- 
-.column.one-fourth {
-  width: 21.25%;
-}
+.column
+  float: left
+  margin-left: 5%
+
+  &:first-child
+    margin-left: 0
+
+  &.full
+    width: 100%
+
+  &.two-thirds
+    width: 65%
+
+  &.half
+    width: 47.5%
+
+  &.one-third
+    width: 30%
+
+  &.one-fourth
+    width: 21.25%
 ```
 
 ####6. Create Rows
 Columns are wrapped in rows to prevent other elements from stacking next to them, otherwise know as clearing issues. Rows are cleared with a `clearfix`.
 
 ```
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+.row 
+  overflow: hidden
+  margin-top: 1.5em
+
+  &:first-child 
+    margin-top: 0
 ```
 
-```
+
 <div class="container">
   <div class="row">
     <div class="column half"></div>
@@ -149,34 +137,39 @@ Columns are wrapped in rows to prevent other elements from stacking next to them
     <div class="column one-third"></div>
   </div>
 </div>
-```
+
 
 ####7. Add a Mobile Breakpoint
 If the browser's screen size is within a set range, a media query will replace the CSS the browser uses. This is the bread and butter of responsive web design.
 
 ```
-@media screen and (max-width: 640px) {
+@media xs
+  html
+    font-size: 100%
+  section
+    padding: 2rem 0
+  hr
+    margin: 2rem auto
+
   .column.full,
   .column.two-thirds,
   .column.half,
   .column.one-third,
-  .column.one-fourth {
-    float: none;
-    margin: 0;
-    width: 100%;
-  }
-}
+  .column.one-fourth 
+    float: none
+    margin: 2em 0 0 0
+    width: 100%
 ```
+####8. What's up with that breakpoint in that last example? That isn't normal.</h1>
+`xs` is 1 of 11 shorthand breakpoints powered by Stylus Utility Belt. [The following Gist](https://gist.github.com/josephdburdick/9592025.js) is `_breakpoints.styl` in its entirety, showing all available options.  
 
-####8. Make It Work With IE8
+
+####9. Breakpoint inspector
+Stylus Utility Belt also features a handy-dandy inspector to tell you what breakpoint you're in. It helps with development, is every easy to remove from production, and is totally Javascript-free. Go ahead and try it! If you resize the browser it'll return the current breakpoint. Just remove `@import '_breakpoint_inspector.styl'` from the Stylus sheet. 
+
+####10. Make It Work With IE8
 Add the [html5shiv](https://github.com/aFarkas/html5shiv) and [Respond.js](https://github.com/scottjehl/Respond) polyfills in the `<head>` of your HTML to enable html5 elements and responsive breakpoints in Internet Explorer 8.
 
-```
-<!--[if lt IE 9]>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-<![endif]-->
-```
 
 
 ####Further Reading

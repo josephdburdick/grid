@@ -4,7 +4,7 @@
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Grid</title>
+    <title>Grid + Utility Belt</title>
     <meta name="description" content="A simple responsive framework.">
 
     <!-- Mobile Specific Metas -->
@@ -18,7 +18,33 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
   <![endif]-->
-
+    <style>
+    .circle {
+      border : 3px solid #555;
+      border-radius : 50%;
+      -moz-border-radius : 50%;
+      -webkit-border-radius : 50%;
+      color : #555;
+      display : inline-block;
+      font-size : 1.7rem;
+      font-weight : 600;
+      height : 3.2rem;
+      line-height : 1.7em;
+      margin : -.5rem 1rem 1rem auto;
+      text-align : center;
+      width : 3.2rem;
+      float :left ;
+    }
+    section{
+      margin-top : 2rem;
+    }
+    .intro {
+      margin: 2rem 0
+    }
+    .fragmentation {
+      min-height: 250px
+    }
+    </style>
     <!-- Typekit -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
   </head>
@@ -28,11 +54,11 @@
       <div class='container'>
         <div class="intro">
           <a href="http://www.adamkaplan.me/grid">
-            <h1>grid</h1>
+            <h1>grid + utility belt</h1>
           </a>
-          <p>A simple guide to responsive design.<br>Made by <a href="http://www.adamkaplan.me/" target="_blank">Adam Kaplan</a>.</p>
+          <p>A simple guide to responsive design.<br>Made by <a href="http://www.adamkaplan.me/" target="_blank">Adam Kaplan</a>. Translated into Stylus and extended with <a href="https://github.com/josephdburdick/stylus-utilitybelt">Stylus Utility Belt</a> by <a href="http://joeylabs.com">Joe Burdick</a>.
+          </p>
         </div>
-        <img src="images/intro.png" alt="Intro" class="animated fadeInUp">
       </div>
     </header>
 
@@ -43,10 +69,6 @@
         <p>We want our websites to be useable on all devices by responding to
         the user’s behavior, screen size and screen orientation.</p>
       </div>
-    </section>
-
-    <section class="example fragmentation">
-      <div class="container"></div>
     </section>
 
     <section>
@@ -308,7 +330,8 @@
           will replace the CSS the browser uses. This is the bread and butter of
           responsive web design.</p>
           <hr>
-          <script src="https://gist.github.com/anonymous/9225701.js"></script>
+          <script src="https://gist.github.com/josephdburdick/9591991.js"></script>
+        
         </div>
       </section>
 
@@ -341,17 +364,27 @@
           </div>
         </div>
       </section>
-
+      
       <section>
         <div class='container'>
           <div class="circle">8</div>
-          <h1>Make It Work With IE8</h1>
-          <p>Add the <a href="https://github.com/aFarkas/html5shiv" target="_blank">html5shiv</a>
-          and <a href="https://github.com/scottjehl/Respond" target="_blank">Respond.js</a>
-          polyfills in the <code>&lt;head&gt;</code> of your HTML
-          to enable html5 elements and responsive breakpoints in Internet Explorer 8.</p>
+          <h1>What's up with that breakpoint in that last gist? That isn't normal.</h1>
+          <p>
+            <code>xs</code> is 1 of 11 shorthand breakpoints powered by Stylus Utility Belt. The following is <code>_breakpoints.styl</code> in its entirety, showing all available options:   
+          </p>
+          <script src="https://gist.github.com/josephdburdick/9592025.js"></script>
+        </div>
+      </section>
+
+      <section>
+        <div class='container'>
+          <div class="circle">9</div>
+          <h1>And this tab in the bottom right corner?</h1>
+          <p>
+            Stylus Utility Belt also features a handy-dandy inspector to tell you what breakpoint you're in. It helps with development, is every easy to remove from production, and totally Javascript-free. Go ahead and try it! If you resize the browser it'll return the current breakpoint. Just remove <code>@import '_breakpoint_inspector.styl'</code> from the Stylus sheet.
+          </p>
           <hr>
-          <script src="https://gist.github.com/anonymous/9225714.js"></script>
+          <script src="https://gist.github.com/josephdburdick/9592241.js"></script>
         </div>
       </section>
 
