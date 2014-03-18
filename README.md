@@ -161,7 +161,7 @@ If the browser's screen size is within a set range, a media query will replace t
     width: 100%
 ```
 ####8. What's up with that breakpoint in that last example? That isn't normal.</h1>
-`xs` is 1 of 11 shorthand breakpoints powered by Stylus Utility Belt. [The following Gist](https://gist.github.com/josephdburdick/9592025.js) is `_breakpoints.styl` in its entirety, showing all available options.  
+`xs` is 1 of 11 shorthand breakpoints powered by Stylus Utility Belt. [The following Gist](https://gist.github.com/josephdburdick/9592025) is `_breakpoints.styl` in its entirety, showing all available options.  
 
 
 ####9. Breakpoint inspector
